@@ -2,7 +2,16 @@
 var altura = 0
 var largura = 0
 var vidas = 1
-var tempo = 10
+var tempo = 15
+var nivel = window.location.search.replace('?', '')
+var criaMosquitoTempo = 1500
+
+if (nivel === 'facil')
+  criaMosquitoTempo = 1500
+else if (nivel === 'medio')
+  criaMosquitoTempo = 1000
+else if (nivel === 'dificil')
+  criaMosquitoTempo = 750
 
 function ajustaTamanhoPalcoJogo() {
   altura = window.innerHeight
@@ -81,4 +90,4 @@ function ladoAleatorio() {
 
 document.getElementById('cronometro').innerHTML = tempo
 
-var criaMosquito = setInterval(() => posicaoRandomica(), 2000)
+var criaMosquito = setInterval(() => posicaoRandomica(), criaMosquitoTempo)
