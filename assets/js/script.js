@@ -56,6 +56,4 @@ function ladoAleatorio() {
 
 
 
-setInterval(function() {
-  posicaoRandomica()
-}, 1000)
+setInterval(() => posicaoRandomica(), 1000)
